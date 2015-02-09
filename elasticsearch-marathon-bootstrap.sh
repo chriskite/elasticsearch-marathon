@@ -10,6 +10,6 @@ exec /elasticsearch/bin/elasticsearch \
 --network.publish_host=${HOST} \
 --discovery.zen.ping.multicast.enabled=false \
 --discovery.zen.ping.unicast.hosts=${hosts} \
---http.port=${PORT1} \
---transport.tcp.port=${PORT0} \
---transport.publish_port=9300
+--http.port=9200 \
+--transport.tcp.port=9300 \
+--transport.publish_port=${PORT0}
