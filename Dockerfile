@@ -1,7 +1,7 @@
-FROM dockerfile/elasticsearch
+FROM barnybug/elasticsearch:1.4.4
 
-RUN sudo apt-get -y update
-RUN sudo apt-get -y install curl ruby
+RUN apt-get -y update
+RUN apt-get -y install curl ruby
 
 ADD ./elasticsearch-marathon-bootstrap.sh /usr/local/bin/
 ADD ./elasticsearches.rb /usr/local/bin/
