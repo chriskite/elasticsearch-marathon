@@ -4,7 +4,9 @@ hosts=$(/usr/local/bin/elasticsearches.rb $MARATHON_URL $APP_ID)
 node_name="${APP_ID}-${PORT0}"
 cluster_name="${ELASTICSEARCH_CLUSTER_NAME}"
 
-exec /elasticsearch/bin/elasticsearch \
+echo "Starting Elasticsearch node ${node_name} in cluster ${cluster_name} on ${HOST}"
+
+exec /usr/share/elasticsearch/bin/elasticsearch \
 --node.name=${node_name} \
 --cluster.name=${cluster_name} \
 --network.publish_host=${HOST} \
